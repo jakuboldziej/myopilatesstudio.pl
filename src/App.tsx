@@ -1,34 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Instagram from "./assets/icons/instagram.png"
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+    <div className="h-screen flex flex-col items-center justify-center">
+      <img className="w-3/4 sm:w-2/3 max-w-180" src="logo.svg" />
+
+
+      <span className="text-center text-7xl sm:text-9xl">Wkrótce otwarcie!</span>
+
+      <div className="pt-6">
+        <a className="transition-opacity hover:opacity-75" target="_blank" href="https://www.instagram.com/myopilatesstudio/">
+          <img className="w-14" src={Instagram} />
         </a>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   )
 }
 
