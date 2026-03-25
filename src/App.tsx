@@ -15,7 +15,7 @@ function App() {
       <div className="flex flex-col items-center gap-2">
         <span className="text-center text-7xl sm:text-9xl">Wkrótce otwarcie!</span>
         <a
-          className="text-center w-fit text-7xl sm:text-9xl underline underline-offset-30 hover:opacity-70 transition-colors"
+          className="text-center w-fit text-7xl sm:text-9xl underline underline-offset-10 hover:opacity-70 transition-colors"
           href="https://app.fitssey.com/myopilatesstudio/frontoffice#filters:2026-04-13,0" target="_blank"
         >
           Grafik
