@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import InstagramImg from "./assets/icons/instagram.png"
 import FacebookImg from "./assets/icons/facebook.png"
 
-const TARGET_DATE = new Date("2026-04-14T16:30:00+02:00").getTime();
+const TARGET_DATE = new Date("2026-04-07T16:00:00+02:00").getTime();
 
 const calculateTimeLeft = () => {
   const difference = TARGET_DATE - new Date().getTime();
