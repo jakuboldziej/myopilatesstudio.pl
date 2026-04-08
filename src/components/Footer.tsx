@@ -9,9 +9,9 @@ const menuItems = routerItems;
 
 const navigation = {
   classes: [
-    { name: "🩵 Barre 🩵 mata", href: "/zajecia?klasa=barremata" },
-    { name: "🩵 Reformer+", href: "/zajecia?klasa=reformer" },
-    { name: "🩵 Zajęcia indywidualne", href: "/zajecia?klasa=indywidualne" },
+    { name: "🩵 Barre 🩵 mata", href: "/zajecia/barremata" },
+    { name: "🩵 Reformer+", href: "/zajecia/reformer" },
+    { name: "🩵 Zajęcia indywidualne", href: "/zajecia/indywidualne" },
   ],
 }
 

@@ -1,11 +1,21 @@
-import { useState } from "react";
-import ClassCard from "./ClassCard"
+import { useParams, useNavigate } from "react-router-dom";
+import ClassCard from "./ClassCard";
 import { classTypes } from "@/lib/variables";
 import ClassModal from "./ClassModal";
-import type { ClassType } from "@/lib/variables";
 
 function ClassTypes() {
-  const [selectedClass, setSelectedClass] = useState<ClassType | null>(null);
+  const { classId } = useParams();
+  const navigate = useNavigate();
+
+  const selectedClass = classTypes.find((c) => c.id === classId) || null;
+
+  const handleOpenModal = (id: string) => {
+    navigate(`/zajecia/${id}`, { replace: true, preventScrollReset: true });
+  };
+
+  const handleCloseModal = () => {
+    navigate("/zajecia", { replace: true, preventScrollReset: true });
+  };
 
   return (
     <section className="py-20 bg-background relative">
@@ -29,8 +39,7 @@ function ClassTypes() {
               iconColorClass={classType.color}
               duration={classType.duration}
               bgColor="bg-card"
-              // Update local state on click
-              onClick={() => setSelectedClass(classType)}
+              onClick={() => handleOpenModal(classType.id)}
             />
           ))}
         </div>
@@ -38,7 +47,7 @@ function ClassTypes() {
 
       <ClassModal
         selectedClass={selectedClass}
-        onClose={() => setSelectedClass(null)}
+        onClose={handleCloseModal}
       />
     </section>
   )

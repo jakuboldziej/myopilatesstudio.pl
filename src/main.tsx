@@ -7,6 +7,7 @@ import NotFound from './pages/NotFound'
 import { routerItems } from './lib/variables'
 import { businessData } from './lib/businessData'
 import ReactGA from 'react-ga4'
+import Classes from './pages/Classes'
 
 ReactGA.initialize('G-ZDNRFJ6SPH')
 
@@ -19,6 +20,8 @@ const dynamicRoutes = routerItems.map((item) => ({
   path: item.href,
   element: item.element,
 }))
+
+dynamicRoutes.push({ path: "/zajecia/:classId", element: <Classes /> });
 
 const router = createBrowserRouter([
   {
