@@ -1,16 +1,43 @@
-import Navbar from "./components/Navbar"
+import { useLocation, useOutlet, ScrollRestoration } from "react-router-dom"
+import { AnimatePresence, motion } from "framer-motion"
+import Navbar from "@/components/Navbar"
+import Footer from "@/components/Footer"
+import { useEffect } from "react";
+import ReactGA from 'react-ga4'
 
 function App() {
+  const location = useLocation();
+  const currentOutlet = useOutlet();
+
+  useEffect(() => {
+    ReactGA.send({ hitType: "pageview", page: location.pathname })
+  }, [location.pathname])
+
   return (
-    <div className="h-dvh">
+    <div className="flex flex-col min-h-screen bg-background">
       <Navbar />
 
-      <lb-schedule-widget
-        category="0047C679-E9BF-42D4-A9DA-14183946D971"
-        class-service="0944DE42-9D28-4447-8D3D-B4A9DFC7E203"
-        member="F45B68AA-D7F4-4B4D-8255-48C2D25F7C5B"
-        location="36996B54-6B91-43B6-985B-39D33FD6B602"
-      ></lb-schedule-widget>
+      <div className="flex-1 flex flex-col">
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.main
+            key={location.pathname}
+            initial={{ opacity: 0, scale: 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.98 }}
+            transition={{
+              type: "spring",
+              stiffness: 400,
+              damping: 25,
+            }}
+            className="flex-1 flex flex-col origin-top"
+          >
+            {currentOutlet}
+          </motion.main>
+        </AnimatePresence>
+      </div>
+
+      <Footer />
+      <ScrollRestoration />
     </div>
   )
 }
