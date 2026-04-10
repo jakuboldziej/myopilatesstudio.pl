@@ -16,26 +16,28 @@ function App() {
   const basePath = location.pathname.split('/')[1] || 'home';
 
   return (
-    <div className="flex flex-col min-h-screen bg-background">
-      <Navbar />
+    <div className="bg-background">
+      <div className="flex flex-col min-h-screen">
+        <Navbar />
 
-      <div className="flex-1 flex flex-col">
-        <AnimatePresence mode="wait" initial={false}>
-          <motion.main
-            key={basePath}
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.98 }}
-            transition={{
-              type: "spring",
-              stiffness: 400,
-              damping: 25,
-            }}
-            className="flex-1 flex flex-col origin-top"
-          >
-            {currentOutlet}
-          </motion.main>
-        </AnimatePresence>
+        <div className="flex-1 flex flex-col relative">
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.main
+              key={basePath}
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 15 }}
+              transition={{
+                type: "spring",
+                stiffness: 400,
+                damping: 30,
+              }}
+              className="flex-1 flex flex-col w-full origin-top"
+            >
+              {currentOutlet}
+            </motion.main>
+          </AnimatePresence>
+        </div>
       </div>
 
       <Footer />

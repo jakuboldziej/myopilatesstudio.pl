@@ -1,5 +1,6 @@
 import { ArrowRight, CheckCircle } from "lucide-react"
 import CustomLink from "../custom/CustomLink";
+import CustomImage from "@/components/custom/CustomImage";
 
 const highlights = [
   "Nowoczesny sprzęt i wyposażenie",
@@ -15,22 +16,18 @@ function AboutPreview() {
           <div className="relative">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
-                <div className="aspect-[4/5] relative rounded-lg overflow-hidden">
-                  <img
-                    src="/images/studio-interior.jpg"
-                    alt="Wnetrze Myo Pilates Studio"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                <CustomImage
+                  src="/images/interior-2.jpg"
+                  alt="Wnętrze Myo Pilates Studio"
+                  containerClassName=" rounded-lg"
+                />
               </div>
               <div className="space-y-4 pt-8">
-                <div className="aspect-[4/5] relative rounded-lg overflow-hidden">
-                  <img
-                    src="/images/pilates-class.jpg"
-                    alt="Zajecia Pilates w trakcie"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                <CustomImage
+                  src="/images/interior-3.jpg"
+                  alt="Zajęcia Pilates w trakcie"
+                  containerClassName=" rounded-lg"
+                />
               </div>
             </div>
             <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-secondary/20 rounded-lg -z-10" />
@@ -67,9 +64,7 @@ function AboutPreview() {
             </ul>
 
             <div className="mt-10">
-              <CustomLink
-                to="/studio"
-              >
+              <CustomLink to="/studio">
                 Poznaj Nasz Zespół
                 <ArrowRight className="ml-2 h-4 w-4" />
               </CustomLink>

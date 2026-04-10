@@ -2,6 +2,7 @@ import { MapPin, Phone, Mail } from "lucide-react"
 import Facebook from "@/assets/icons/facebook.png"
 import Instagram from "@/assets/icons/instagram.png"
 import { businessData } from "@/lib/businessData"
+import CustomImage from "@/components/custom/CustomImage";
 
 const contactDetails = [
   {
@@ -76,10 +77,11 @@ function ContactInfo() {
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors group"
             >
-              <img
+              <CustomImage
                 src={Instagram}
                 alt="Instagram"
-                className="h-5 w-5 opacity-70 group-hover:opacity-100 transition-opacity"
+                containerClassName="h-5 w-5 flex-shrink-0"
+                className="object-contain opacity-70 group-hover:opacity-100 transition-opacity"
               />
               <span className="text-sm font-medium">Instagram</span>
             </a>
@@ -89,10 +91,11 @@ function ContactInfo() {
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors group"
             >
-              <img
+              <CustomImage
                 src={Facebook}
                 alt="Facebook"
-                className="h-5 w-5 opacity-70 group-hover:opacity-100 transition-opacity"
+                containerClassName="h-5 w-5 flex-shrink-0"
+                className="object-contain opacity-70 group-hover:opacity-100 transition-opacity"
               />
               <span className="text-sm font-medium">Facebook</span>
             </a>

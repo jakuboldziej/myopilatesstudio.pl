@@ -1,3 +1,5 @@
+import CustomImage from "@/components/custom/CustomImage";
+
 function StudioStory() {
   return (
     <section className="py-20 bg-background">
@@ -39,13 +41,11 @@ function StudioStory() {
           </div>
 
           <div className="relative">
-            <div className="aspect-[4/5] relative rounded-lg overflow-hidden">
-              <img
-                src="/images/studio-interior.jpg"
-                alt="Wnętrze Myo Pilates Studio"
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <CustomImage
+              src="/images/interior-2.jpg"
+              alt="Wnętrze Myo Pilates Studio"
+              containerClassName="rounded-lg relative z-10"
+            />
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-secondary/30 rounded-lg -z-10" />
             <div className="absolute -top-6 -left-6 w-24 h-24 bg-accent/20 rounded-lg -z-10" />
           </div>

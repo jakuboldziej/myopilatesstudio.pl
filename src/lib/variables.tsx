@@ -5,6 +5,7 @@ import Studio from '@/pages/Studio';
 import Contact from '@/pages/Contact';
 import { Dumbbell, Heart, Users } from 'lucide-react';
 import type { ReactElement } from 'react';
+// import Pricing from '@/pages/Pricing';
 
 interface RouterItem {
   title: string;
@@ -17,6 +18,7 @@ export const routerItems: RouterItem[] = [
   { title: "Strona główna", href: "/", element: <Home />, showInNav: false },
   { title: "Grafik", href: "/grafik", element: <Schedule />, showInNav: false },
   { title: "Studio", href: "/studio", element: <Studio />, showInNav: true },
+  // { title: "Cennik", href: "/cennik", element: <Pricing />, showInNav: true },
   { title: "Zajęcia", href: "/zajecia", element: <Classes />, showInNav: true },
   { title: "Kontakt", href: "/kontakt", element: <Contact />, showInNav: true }
 ]
@@ -25,9 +27,9 @@ export type ClassType = typeof classTypes[0];
 
 export const classTypes = [
   {
-    name: "Barre 🩵 mata",
+    name: "Barre & mata",
     shortDescription: "Idealne połączenie dynamicznego barre przy drążku oraz klasycznego pilatesu na macie z użyciem małego sprzętu.",
-    fullDescription: "Zajęcia barre 🩵 mata, idealne połączenie!\n\n🩵 Barre\nDynamiczne zajęcia będące fuzją pilatesu, baletu i fitnessu. Zajęcia odbywają się przy drążku baletowym, a ćwiczenia skupiają się na wysmuklaniu mięśni i budowaniu ich siły. Poprawiają stabilizację oraz wzmacnianie mięśni posturalnych.\n\n🩵 Mata\nZajęcia budują silny gorset mięśniowy, poprawiają postawę, uelastyczniają oraz uczą świadomego oddechu. Na zajęciach korzystamy z piłek, ciężarków, taśm, magic circle, aby urozmaicić zajęcia i pogłębić ruch.",
+    fullDescription: "Zajęcia barre & mata, idealne połączenie!\n\n🩵 Barre\nDynamiczne zajęcia będące fuzją pilatesu, baletu i fitnessu. Zajęcia odbywają się przy drążku baletowym, a ćwiczenia skupiają się na wysmuklaniu mięśni i budowaniu ich siły. Poprawiają stabilizację oraz wzmacnianie mięśni posturalnych.\n\n🩵 Mata\nZajęcia budują silny gorset mięśniowy, poprawiają postawę, uelastyczniają oraz uczą świadomego oddechu. Na zajęciach korzystamy z piłek, ciężarków, taśm, magic circle, aby urozmaicić zajęcia i pogłębić ruch.",
     duration: "50 min",
     icon: Heart,
     color: "bg-green-100 text-green-700",

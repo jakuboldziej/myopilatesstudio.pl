@@ -1,10 +1,11 @@
 import { ArrowRight } from "lucide-react"
 import CustomLink from "../custom/CustomLink"
+import CustomImage from "@/components/custom/CustomImage";
 
 const galleryImages = [
-  { src: "/images/hero-pilates.jpg", alt: "Studio Pilates z naturalnym swiatlem" },
-  { src: "/images/studio-interior.jpg", alt: "Wnetrze studia z reformerami" },
-  { src: "/images/pilates-class.jpg", alt: "Grupowe zajecia Pilates" },
+  { src: "/images/interior-5.jpg", alt: "Wnętrze studia z reformerami" },
+  { src: "/images/interior-3.jpg", alt: "Główne studio Myo Pilates" },
+  { src: "/images/interior-logo.jpg", alt: "Reformer w studiu Myo" },
 ]
 
 function StudioGallery() {
@@ -20,19 +21,29 @@ function StudioGallery() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {galleryImages.map((image, index) => (
-            <div
-              key={index}
-              className={`relative rounded-lg overflow-hidden ${index === 0 ? "md:col-span-2 md:row-span-2 aspect-[4/3]" : "aspect-square"}`}
-            >
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-          ))}
+        <div className="flex flex-col gap-4 lg:gap-6">
+          <CustomImage
+            src={galleryImages[0].src}
+            alt={galleryImages[0].alt}
+            containerClassName="w-full rounded-2xl overflow-hidden shadow-sm bg-transparent"
+            className="w-full h-auto hover:scale-[1.02] transition-transform duration-700"
+          />
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
+            <CustomImage
+              src={galleryImages[1].src}
+              alt={galleryImages[1].alt}
+              containerClassName="w-full rounded-2xl overflow-hidden shadow-sm bg-transparent"
+              className="w-full h-auto hover:scale-[1.03] transition-transform duration-700"
+            />
+            <CustomImage
+              src={galleryImages[2].src}
+              alt={galleryImages[2].alt}
+              containerClassName="w-full rounded-2xl overflow-hidden shadow-sm bg-transparent"
+              className="w-full h-auto hover:scale-[1.03] transition-transform duration-700"
+            />
+          </div>
+
         </div>
 
         <div className="text-center mt-12 flex flex-col items-center justify-center">
@@ -40,9 +51,7 @@ function StudioGallery() {
             Gotowy, aby doświadczyć Myo Pilates na własnej skórze?
           </p>
 
-          <CustomLink
-            to="/grafik"
-          >
+          <CustomLink to="/grafik">
             Zobacz Nasz Grafik Zajęć
             <ArrowRight className="ml-2 h-4 w-4" />
           </CustomLink>
@@ -52,4 +61,4 @@ function StudioGallery() {
   )
 }
 
-export default StudioGallery
+export default StudioGallery;

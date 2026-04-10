@@ -4,31 +4,37 @@ import Facebook from "@/assets/icons/facebook.png"
 import Instagram from "@/assets/icons/instagram.png"
 import { routerItems } from "@/lib/variables";
 import { businessData } from "@/lib/businessData";
+import CustomImage from "@/components/custom/CustomImage";
 
 const menuItems = routerItems;
 
 const navigation = {
   classes: [
-    { name: "🩵 Barre 🩵 mata", href: "/zajecia/barremata" },
+    { name: "🩵 Barre & mata", href: "/zajecia/barremata" },
     { name: "🩵 Reformer+", href: "/zajecia/reformer" },
     { name: "🩵 Zajęcia indywidualne", href: "/zajecia/indywidualne" },
+  ],
+  legal: [
+    { name: "Regulamin", href: "/dokumenty/regulamin.pdf" },
+    { name: "Polityka Prywatnosci", href: "/dokumenty/polityka-prywatnosci.pdf" },
   ],
 }
 
 function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground">
-      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+      <div className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
 
           <div className="space-y-6">
             <Link to="/" className="inline-block">
-              <img
+              <CustomImage
                 src="/logo.png"
                 alt="Myo Pilates Studio"
                 width={120}
                 height={120}
-                className="h-28 w-auto brightness-0 invert"
+                containerClassName="h-28 w-[120px]"
+                className="object-contain brightness-0 invert"
               />
             </Link>
             <p className="text-sm text-primary-foreground/80 leading-relaxed">
@@ -42,7 +48,12 @@ function Footer() {
                 className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
                 aria-label="Obserwuj nas na Instagram"
               >
-                <img src={Instagram} alt="Instagram" className="h-10 w-10" />
+                <CustomImage
+                  src={Instagram}
+                  alt="Instagram"
+                  containerClassName="h-10 w-10"
+                  className="object-contain"
+                />
               </a>
               <a
                 href="https://www.facebook.com/profile.php?id=61583752617489"
@@ -51,7 +62,12 @@ function Footer() {
                 className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
                 aria-label="Obserwuj nas na Facebook"
               >
-                <img src={Facebook} alt="Facebook" className="h-10 w-10" />
+                <CustomImage
+                  src={Facebook}
+                  alt="Facebook"
+                  containerClassName="h-10 w-10"
+                  className="object-contain"
+                />
               </a>
             </div>
           </div>
@@ -141,9 +157,24 @@ function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-primary-foreground/20">
-          <p className="text-center text-xs text-primary-foreground/60">
-            &copy; {new Date().getFullYear()} Myo Pilates Studio. Wszelkie prawa zastrzeżone.
-          </p>
+          <div className="flex flex-col items-center gap-4 md:flex-row md:justify-between">
+            <p className="text-xs text-primary-foreground/60">
+              &copy; {new Date().getFullYear()} Myo Pilates Studio. Wszelkie prawa zastrzezone.
+            </p>
+            <nav className="flex gap-6">
+              {navigation.legal.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-primary-foreground/60 hover:text-primary-foreground transition-colors"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </nav>
+          </div>
         </div>
       </div>
     </footer>

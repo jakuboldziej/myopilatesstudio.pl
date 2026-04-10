@@ -55,7 +55,7 @@ export default function Navbar() {
             className='py-2 px-3 rounded-md bg-accent text-primary-foreground hover:bg-accent/90 w-fit'
             to="/grafik"
           >
-            Grafik
+            Grafik 🩵 Cennik
           </Link>
         </div>
 
@@ -96,7 +96,7 @@ export default function Navbar() {
                 to="/grafik"
                 onClick={closeMenu}
               >
-                Grafik
+                Grafik 🩵 Cennik
               </CustomLink>
             </div>
           </motion.div>

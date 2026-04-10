@@ -7,7 +7,8 @@ export default defineConfig({
   server: {
     allowedHosts: [
       "devserver-preview--myopilatesstudio.netlify.app",
-      "dev.oldziej.pl"
+      "dev.oldziej.pl",
+      "myo.oldziej.pl"
     ]
   },
   plugins: [

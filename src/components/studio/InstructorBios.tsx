@@ -1,3 +1,5 @@
+import CustomImage from "@/components/custom/CustomImage";
+
 const instructors = [
   {
     name: "Oliwia Kandefer",
@@ -8,12 +10,11 @@ const instructors = [
         <p>
           Moja przygoda z ruchem zaczęła się od tańca klasycznego i współczesnego. To właśnie taniec ukształtował moją wrażliwość, a studia choreograficzne na Akademii Muzycznej w Łodzi stały się małym przełomem, tam poznałam metodę Pilates, która szybko przerodziła się w pasję.
         </p>
-
-        🩵
+        🩵<br />
         <p>
           W pilatesie najbardziej cenię dbałość o detal, budowanie świadomej siły oraz integrację ciała z oddechem. Wierzę, że nawet najmniejsza modyfikacja w ćwiczeniu może stać się nowym wyzwaniem, prowadzącym do głębszego zrozumienia własnych możliwości.
         </p>
-        🩵
+        🩵<br />
         <p>
           Wierzę, że pilates jest dla każdego. Dzięki indywidualnemu podejściu pomogę Ci odkryć potencjał Twojego ciała, niezależnie od Twojego stopnia zaawansowania.
         </p>
@@ -48,13 +49,12 @@ function InstructorBios() {
               key={instructor.name}
               className="flex flex-col md:flex-row bg-card border border-border rounded-2xl max-w-[640px] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
             >
-              <div className="md:w-2/5 aspect-square md:aspect-auto relative bg-muted shrink-0">
-                <img
-                  src={instructor.image}
-                  alt={instructor.name}
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              <CustomImage
+                src={instructor.image}
+                alt={instructor.name}
+                containerClassName="md:w-2/5 aspect-square md:aspect-auto relative shrink-0"
+                className="object-cover object-top"
+              />
 
               <div className="flex flex-col p-6 md:p-8 md:w-3/5">
                 <div className="mb-4">
