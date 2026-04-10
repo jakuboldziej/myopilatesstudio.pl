@@ -19,6 +19,9 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+
+  --height-navbar: var(--navbar-height);
+  --height-container: var(--container-no-nav);
 }
 
 :root {
@@ -52,6 +55,9 @@
   --border: lab(86.1558% -4.19956 -5.81979);
   --input: lab(90.7591% -2.12422 -2.92326);
   --ring: lab(51.4576% -11.5196 -17.0183);
+
+  --navbar-height: 88px;
+  --container-no-nav: calc(100vh - 88px);
 }
 
 html {

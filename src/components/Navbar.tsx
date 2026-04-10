@@ -28,7 +28,7 @@ export default function Navbar() {
     <nav
       className={`sticky top-0 inset-x-0 z-50 transition-colors duration-300 ease-in-out bg-primary shadow-md shadow-[0_4px_30px_rgba(0,0,0,0.5)]`}
     >
-      <div className="flex items-center justify-between px-6 h-[88px] max-w-7xl mx-auto">
+      <div className="flex items-center justify-between px-6 h-navbar max-w-7xl mx-auto">
         <Link
           to="/"
           onClick={closeMenu}

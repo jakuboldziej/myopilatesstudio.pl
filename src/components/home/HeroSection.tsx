@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react"
 import { motion, type Variants } from "framer-motion"
-import { useEffect, useState } from "react" // Dodajemy useState
+import { useEffect, useState } from "react"
 import CustomLink from "../custom/CustomLink";
 import CustomImage from "@/components/custom/CustomImage";
 
@@ -10,7 +10,7 @@ const containerVariants: Variants = {
     opacity: 1,
     transition: {
       staggerChildren: 0.2,
-      delayChildren: 0.2, // Lekko przyspieszone
+      delayChildren: 0.2,
     },
   },
 }
@@ -27,17 +27,13 @@ const itemVariants: Variants = {
   },
 }
 
-// Zmienna żyje poza cyklem życia Reacta
 let hasAnimated = false;
 
 function HeroSection() {
-  // TRIK: Domyślny stan to "hidden" (jeśli pierwsze wejście) lub "show" (jeśli wracamy z innej podstrony)
   const [animTrigger, setAnimTrigger] = useState(hasAnimated ? "show" : "hidden");
 
   useEffect(() => {
     if (!hasAnimated) {
-      // Jeśli to pierwsze załadowanie, czekamy 50ms i ręcznie odpalamy animację.
-      // To całkowicie omija blokadę initial={false} z pliku App.tsx!
       const timer = setTimeout(() => {
         setAnimTrigger("show");
         hasAnimated = true;
@@ -48,7 +44,7 @@ function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-[90vh] flex items-center">
+    <section className="relative min-h-container flex items-center">
       <div className="absolute inset-0 z-0">
         <CustomImage
           src="/images/interior-6.jpg"
@@ -61,8 +57,8 @@ function HeroSection() {
       <div className="relative z-20 mx-auto max-w-7xl px-6 lg:px-8 py-24">
         <motion.div
           variants={containerVariants}
-          initial="hidden" // Zawsze startuje z tego punktu, żeby nie mrugnąć tekstem
-          animate={animTrigger} // Kontrolowane przez nasz stan (useState)
+          initial="hidden"
+          animate={animTrigger}
           className="max-w-2xl"
         >
           <motion.p variants={itemVariants} className="text-accent font-medium tracking-widest uppercase text-sm mb-4">
